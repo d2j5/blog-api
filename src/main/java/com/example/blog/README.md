@@ -78,7 +78,32 @@ GET /posts/{id}: Retrieve a specific blog post by ID
 
 Method: GET
 URL: http://localhost:8080/posts/{id} (replace {id} with the actual ID of a blog post)
-Expected Result: You should receive a response with the details of the specified blog post.
+Expected Result: You should receive a response with the details of the specified blog post like this:
+http://localhost:8080/posts/2
+{
+"id": 2,
+"title": "Tips for Effective Time Management",
+"content": "Time management is essential for productivity and success. Here are some tips to help you manage your time effectively: prioritize tasks, set clear goals, eliminate distractions, and take regular breaks.",
+"author": "Alex",
+"_links": {
+"self": {
+"href": "http://localhost:8080/posts/2"
+}
+}
+Note: in the results of the get method, it can be seen that the code implements HATEOAS and add self links to each blog post. 
+
+
+Start your Spring Boot application.
+
+In Postman, create a new request with the following details:
+
+Method: GET
+URL: http://localhost:8080/posts/{id} (replace {id} with an existing blog post ID)
+Send the request and inspect the response. The response should include the blog post details along with a _links property that contains a self link.
+
+Here's an example response you should expect to see:
+
+.
 If you try to get a post id that doesn't exist, you will receive the message: "Blog post not found with id: " + id.
 
 POST /posts: Create a new blog post
