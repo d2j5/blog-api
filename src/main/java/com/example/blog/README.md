@@ -40,7 +40,7 @@ Copy code
 {
 "title": "Updated Title",
 "content": "Updated Content",
-"author": "Jane Doe"
+"author": "Jane morgan"
 }
 
 Delete a Blog Post
